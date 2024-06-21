@@ -6,7 +6,7 @@ const CourseController = require("../controllers/course")
 
 
 //create a new course
-router.post("/add-course", auth.verify, (req, res) => {
+router.post("/", auth.verify, (req, res) => {
 	console.log(req.body)
 	CourseController.add(req.body).then(resultFromAdd => res.send(resultFromAdd))
 })
